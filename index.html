@@ -1,0 +1,74 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f4f6fb" />
+    <meta name="description" content="Discover workshops, talks, and campus events." />
+    <title>Campusly — Find your next campus event</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+    <script src="app.js" defer></script>
+  </head>
+  <body>
+    <header class="topbar">
+      <a class="brand" href="#home" aria-label="Campusly home"><span class="brand-mark">c</span><span>campusly</span></a>
+      <nav class="main-nav" aria-label="Main navigation"><a class="nav-link active" href="#events">Explore events</a><a class="nav-link" href="#about">About</a></nav>
+      <a class="organizer-link" href="#organizer">For organizers <span aria-hidden="true">↗</span></a>
+    </header>
+
+    <main id="home">
+      <section class="hero" aria-labelledby="hero-title">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="live-dot"></span> YOUR CAMPUS, YOUR COMMUNITY</div>
+          <h1 id="hero-title">Make room for<br /><span>something new.</span></h1>
+          <p>Find the talks, workshops, and moments that make campus life yours.</p>
+          <a class="hero-cta" href="#events">Explore what's on <span aria-hidden="true">↓</span></a>
+        </div>
+        <div class="hero-art" aria-label="Illustration of students at a campus event" role="img">
+          <div class="sun"></div><div class="art-note note-one">GOOD<br />THINGS<br />HAPPEN HERE <span>✳</span></div>
+          <div class="art-note note-two">MEET<br />YOUR<br />PEOPLE <span>↗</span></div>
+          <div class="person person-left"><i></i><b></b><em></em></div><div class="person person-mid"><i></i><b></b><em></em></div><div class="person person-right"><i></i><b></b><em></em></div>
+          <div class="art-ground"></div><div class="art-caption"><span>01 / 03</span><span>GOOD ENERGY ONLY</span></div>
+        </div>
+      </section>
+
+      <section class="events-section" id="events" aria-labelledby="events-title">
+        <div class="section-heading">
+          <div><div class="eyebrow muted">THE CAMPUS CALENDAR</div><h2 id="events-title">Find your next <span>thing.</span></h2></div>
+          <p class="section-aside">Curated by students,<br />made for everyone.</p>
+        </div>
+        <div class="toolbar">
+          <label class="search-box"><span class="search-icon" aria-hidden="true">⌕</span><span class="sr-only">Search events</span><input id="search-input" type="search" placeholder="Search events, topics, venues..." autocomplete="off" /></label>
+          <div class="category-filters" role="group" aria-label="Filter events by category">
+            <button class="filter-chip active" type="button" data-category="All">All events <span class="chip-count" id="all-count">0</span></button>
+            <button class="filter-chip" type="button" data-category="Workshop">Workshops</button>
+            <button class="filter-chip" type="button" data-category="Talk">Talks</button>
+            <button class="filter-chip" type="button" data-category="Social">Social</button>
+            <button class="filter-chip" type="button" data-category="Competition">Competitions</button>
+          </div>
+        </div>
+        <div class="results-line"><span id="results-count" aria-live="polite">Showing events</span><span class="sort-label">UPCOMING FIRST <span aria-hidden="true">↗</span></span></div>
+        <div class="event-grid" id="event-grid" aria-live="polite"></div>
+        <div class="empty-state" id="empty-state" hidden><div class="empty-icon">⌕</div><h3>No events found</h3><p>Try another search or clear your filters to see what's happening.</p><button class="text-button" id="clear-filters" type="button">Clear filters <span aria-hidden="true">↗</span></button></div>
+        <p class="demo-note"><span class="demo-dot"></span> Demo events shown. Availability is sample data until connected to the shared registration system.</p>
+      </section>
+
+      <section class="organizer-banner" id="organizer"><div><div class="eyebrow light">HAVE SOMETHING IN MIND?</div><h2>Make it happen<br />on campus.</h2></div><a href="mailto:events@example.edu" class="banner-link">Talk to your event team <span aria-hidden="true">↗</span></a><span class="banner-spark" aria-hidden="true">✳</span></section>
+    </main>
+    <footer id="about"><a class="brand footer-brand" href="#home"><span class="brand-mark">c</span><span>campusly</span></a><span>Made for the moments between classes.</span><span>© 2026 Campusly</span></footer>
+
+    <dialog class="event-dialog" id="event-dialog" aria-labelledby="dialog-title">
+      <button class="dialog-close" id="dialog-close" aria-label="Close event details" type="button">×</button>
+      <div class="dialog-art" id="dialog-art"><span id="dialog-category"></span><span id="dialog-symbol" aria-hidden="true"></span></div>
+      <div class="dialog-content"><div class="eyebrow muted" id="dialog-date"></div><h2 id="dialog-title"></h2><p id="dialog-description"></p>
+        <div class="dialog-facts"><div><span>WHEN</span><strong id="dialog-when"></strong></div><div><span>WHERE</span><strong id="dialog-where"></strong></div><div><span>WHO CAN JOIN</span><strong id="dialog-eligibility"></strong></div></div>
+        <div class="dialog-bottom"><span class="seats-indicator" id="dialog-seats"></span><button class="register-button" id="register-button" type="button">Continue to register <span aria-hidden="true">↗</span></button></div>
+        <p class="integration-hint" id="integration-hint">Registration will connect to the team registration module.</p>
+      </div>
+    </dialog>
+    <div class="toast" id="toast" role="status" aria-live="polite"></div>
+  </body>
+</html>
