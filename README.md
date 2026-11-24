@@ -1,22 +1,27 @@
-# Campusly — Campus Event Management & Registration Portal
+# Campusly — Campus Event Portal
 
-Student-facing event discovery UI for the CA1 project. Built with plain HTML, CSS, and JavaScript.
+Campusly helps students discover campus events, check availability, and continue to registration.
+
+## Features
+
+- Browse upcoming events displayed as responsive cards.
+- Search by event title, category, venue, or description.
+- Filter events by category.
+- Open event details to view date, time, venue, description, eligibility, and seats remaining.
+- See clear states for fully booked events and empty search results.
+- Navigate and use the event cards with keyboard controls.
+- Continue from an event to registration with its event ID.
+
+## Built with
+
+HTML, CSS, and vanilla JavaScript. Event records are sample data stored in `app.js`.
 
 ## Run locally
 
-Open `index.html` in a browser. No build step or dependencies are required. For a local web server, run `python -m http.server 8000` from this directory and open `http://localhost:8000`.
+Open `index.html` in a browser. No build step or dependencies are required.
 
-## Student browser features
+## Project files
 
-- Responsive event listing with search and category filters.
-- Event detail dialog with date, venue, eligibility, and remaining seats.
-- Empty search results, full event state, keyboard access, and reduced-motion support.
-- Sample event data in `app.js` to support the UI demo.
-
-## Team integration
-
-The event browser currently reads the `events` array in `app.js`. When the shared data layer is ready, replace that sample source with the team event service. The **Continue to register** button dispatches an `event-registration-request` browser event with `{ eventId }` in `detail`; the registration module can listen for that event or replace the button handler with a shared route. Displayed capacity is demo data and must be read from the shared registration store for a real multi-user system.
-
-## Deployment
-
-This is a static front end and can be published with GitHub Pages. GitHub Pages does not provide shared storage for live registration limits; connect an appropriate backend before claiming cross-user live seat enforcement.
+- `index.html` — page structure
+- `styles.css` — responsive styling
+- `app.js` — sample events and page interactions
